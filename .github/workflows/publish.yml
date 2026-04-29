@@ -33,7 +33,7 @@ jobs:
           git checkout -b add-astro-${{ steps.version.outputs.VERSION }}
           git add .
           git commit -m "Add astro:${{ steps.version.outputs.VERSION }}"
-          git push origin add-astro-${{ steps.version.outputs.VERSION }}
+          git push origin add-astro-${{ steps.version.outputs.VERSION }} --force
           gh pr create \
             --repo typst/packages \
             --title "Add astro:${{ steps.version.outputs.VERSION }}" \
