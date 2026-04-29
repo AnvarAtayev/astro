@@ -8,3 +8,6 @@
 
 # Typst package cache
 .typst/
+
+# System
+.DS_Store
