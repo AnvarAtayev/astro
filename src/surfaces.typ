@@ -25,7 +25,7 @@
 // ── Colors ────────────────────────────────────────────────────────────────────
 
 #let mercury-crater-edge = rgb(44, 42, 41)
-#let mercury_crater = rgb(55, 54, 54)
+#let mercury-crater = rgb(55, 54, 54)
 #let mercury-caloris = rgb(80, 76, 72)
 #let venus1 = rgb(100, 100, 85)
 #let venus2 = rgb(100, 87, 60)
@@ -76,7 +76,7 @@
   circle((-0.25, 0.38), radius: 0.32, fill: mercury-caloris, stroke: mercury-crater-edge + 1pt)
   circle((-0.25, 0.38), radius: 0.22, fill: color.mix((mercury-caloris, 55%), (gray, 45%)), stroke: none)
   // craters distributed across the non-Caloris hemisphere
-  let c(pos, r) = circle(pos, radius: r, fill: mercury_crater, stroke: mercury-crater-edge + 0.5pt)
+  let c(pos, r) = circle(pos, radius: r, fill: mercury-crater, stroke: mercury-crater-edge + 0.5pt)
   c((0.5, 0.55), 0.09)
   c((0.22, 0.3), 0.075)
   c((0.6, 0.65), 0.04)

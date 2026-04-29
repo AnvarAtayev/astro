@@ -6,7 +6,7 @@
 // The inner arc uses a negative delta (stop < start) to sweep CW, which
 // creates the "hole" without relying on background-color overdraw.
 
-#let add_rings_back() = {
+#let add-rings-back() = {
   // Upper half — drawn before the planet so it sits behind it.
   merge-path(close: true, fill: saturn-ring, stroke: none, {
     arc((2.3, 0), start: 0deg,   stop: 180deg, radius: (2.3, 0.23)) // outer upper CCW
@@ -16,7 +16,7 @@
   })
 }
 
-#let add_rings_front() = {
+#let add-rings-front() = {
   // Lower half — drawn after the planet so it sits in front of it.
   merge-path(close: true, fill: saturn-ring, stroke: none, {
     arc((-2.3, 0), start: 180deg, stop: 360deg,  radius: (2.3, 0.23)) // outer lower CCW
@@ -28,12 +28,12 @@
 
 // ── Single thin ring ──────────────────────────────────────────────────────────
 
-#let add_thin_ring_back(a, color: luma(22%)) = {
+#let add-thin-ring-back(a, color: luma(22%)) = {
   let b = a / 10
   arc((a, 0), start: 0deg, stop: 180deg, radius: (a, b), fill: none, stroke: color + 1pt)
 }
 
-#let add_thin_ring_front(a, color: luma(22%)) = {
+#let add-thin-ring-front(a, color: luma(22%)) = {
   let b = a / 10
   arc((-a, 0), start: 180deg, stop: 360deg, radius: (a, b), fill: none, stroke: color + 1pt)
 }

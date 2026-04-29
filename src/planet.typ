@@ -3,7 +3,7 @@
 #import "surfaces.typ": *
 #import "rings.typ": *
 
-#let add_surface(name, color: blue) = {
+#let add-surface(name, color: blue) = {
   let f = surfaces.at(name, default: none)
   if f != none { f() } else { generic_surface(color: color) }
 }
@@ -151,7 +151,7 @@
     // Planet surface
     group({
       rotate(tilt * 1deg)
-      add_surface(surface, color: color)
+      add-surface(surface, color: color)
     })
     add-surface-phase(phase)
 
