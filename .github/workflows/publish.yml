@@ -27,7 +27,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git add typst.toml README.md docs/main.typ
           git commit -m "Bump version to ${{ steps.version.outputs.VERSION }}"
-          git push https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/astro.git main
+          git push https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/astro.git HEAD:main
 
       - name: Clone packages fork
         run: |
