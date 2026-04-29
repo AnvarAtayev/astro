@@ -1,0 +1,10 @@
+# Claude
+.claude/
+
+# Typst build output
+**/*.html
+**/*.pdf
+**/*.png
+
+# Typst package cache
+.typst/
