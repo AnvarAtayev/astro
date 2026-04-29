@@ -17,6 +17,7 @@ jobs:
       - name: Clone packages fork
         run: |
           git clone https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/packages.git
+          git -C packages remote set-url origin https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/packages.git
 
       - name: Copy package files
         run: |
