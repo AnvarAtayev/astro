@@ -28,8 +28,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add typst.toml README.md docs/main.typ
-          git commit -m "Bump version to ${{ steps.version.outputs.VERSION }}"
-          git push https://AnvarAtayev:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/astro.git HEAD:main
+          git diff --cached --quiet || git commit -m "Bump version to ${{ steps.version.outputs.VERSION }}"
+          git diff HEAD..origin/main --quiet || git push https://AnvarAtayev:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/astro.git HEAD:main
 
       - name: Clone packages fork
         run: |
