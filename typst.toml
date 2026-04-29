@@ -7,5 +7,5 @@ entrypoint = "src/bodies.typ"
 authors = ["Anvar Atayev <https://github.com/AnvarAtayev>"]
 description = "Draw celestial bodies in Typst"
 categories = [ "visualization" ]
-disciplines = [ "education", "astronomy", "drawing" ]
+disciplines = [ "education", "physics" ]
 keywords = ["astronomy", "planet", "solar system", "space", "cosmos"]
