@@ -1,5 +1,5 @@
-#import cetz.draw: *
 #import "@preview/cetz:0.5.0"
+#import cetz.draw: *
 #import "../src/bodies.typ": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"))

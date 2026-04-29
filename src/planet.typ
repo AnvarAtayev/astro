@@ -67,8 +67,8 @@
 
 #let add_ring_phase(phase) = {
   let shadow = black.transparentize(40%)
-  // semi-axes of the outer and inner ring ellipses
-  let ro = (1.7, 0.17)
+  // semi-axes of the outer and inner ring ellipses — must match rings.typ
+  let ro = (2.3, 0.23)
   let ri = (1.3, 0.13)
 
   // Point on an ellipse at angle a
@@ -126,6 +126,7 @@
   phase: "full",
   rings: false, // full Saturn-style ring system
   ring: none, // single thin ring at given semi-major axis
+  ring_color: luma(22%), // color for thin ring (Uranus/Neptune style)
   color: blue,
   name: "",
 ) = {
@@ -143,7 +144,7 @@
     if ring != none {
       group({
         rotate(tilt * 1deg)
-        add_thin_ring_back(ring)
+        add_thin_ring_back(ring, color: ring_color)
       })
     }
 
@@ -165,7 +166,7 @@
     if ring != none {
       group({
         rotate(tilt * 1deg)
-        add_thin_ring_front(ring)
+        add_thin_ring_front(ring, color: ring_color)
       })
     }
   })

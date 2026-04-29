@@ -52,6 +52,11 @@
 #let greenish = rgb(80, 78, 60)
 #let whiteish = rgb(98, 92, 80)
 
+// ── Ring colors ───────────────────────────────────────────────────────────────
+#let saturn_ring = rgb("#c8a850")   // warm golden-tan matching Saturn's belt palette
+#let uranus_ring = luma(22%)        // very dark — Uranus's rings are nearly opaque charcoal
+#let neptune_ring = rgb(28, 32, 52) // dark blue-gray — Neptune's rings are dusty and dim
+
 // ── Surfaces ──────────────────────────────────────────────────────────────────
 
 #let sun_surface() = {

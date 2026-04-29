@@ -8,32 +8,32 @@
 
 #let add_rings_back() = {
   // Upper half — drawn before the planet so it sits behind it.
-  merge-path(close: true, fill: yellowish, stroke: none, {
-    arc((1.7, 0), start: 0deg,   stop: 180deg, radius: (1.7, 0.17)) // outer upper CCW
-    line((-1.7, 0), (-1.3, 0))
+  merge-path(close: true, fill: saturn_ring, stroke: none, {
+    arc((2.3, 0), start: 0deg,   stop: 180deg, radius: (2.3, 0.23)) // outer upper CCW
+    line((-2.3, 0), (-1.3, 0))
     arc((-1.3, 0), start: 180deg, stop: 0deg,  radius: (1.3, 0.13)) // inner upper CW (delta = -180°)
-    line((1.3, 0), (1.7, 0))
+    line((1.3, 0), (2.3, 0))
   })
 }
 
 #let add_rings_front() = {
   // Lower half — drawn after the planet so it sits in front of it.
-  merge-path(close: true, fill: yellowish, stroke: none, {
-    arc((-1.7, 0), start: 180deg, stop: 360deg,  radius: (1.7, 0.17)) // outer lower CCW
-    line((1.7, 0), (1.3, 0))
+  merge-path(close: true, fill: saturn_ring, stroke: none, {
+    arc((-2.3, 0), start: 180deg, stop: 360deg,  radius: (2.3, 0.23)) // outer lower CCW
+    line((2.3, 0), (1.3, 0))
     arc((1.3, 0),  start: 0deg,   stop: -180deg, radius: (1.3, 0.13)) // inner lower CW (delta = -180°)
-    line((-1.3, 0), (-1.7, 0))
+    line((-1.3, 0), (-2.3, 0))
   })
 }
 
 // ── Single thin ring ──────────────────────────────────────────────────────────
 
-#let add_thin_ring_back(a) = {
+#let add_thin_ring_back(a, color: luma(22%)) = {
   let b = a / 10
-  arc((a, 0), start: 0deg, stop: 180deg, radius: (a, b), fill: none, stroke: yellowish + 1pt)
+  arc((a, 0), start: 0deg, stop: 180deg, radius: (a, b), fill: none, stroke: color + 1pt)
 }
 
-#let add_thin_ring_front(a) = {
+#let add_thin_ring_front(a, color: luma(22%)) = {
   let b = a / 10
-  arc((-a, 0), start: 180deg, stop: 360deg, radius: (a, b), fill: none, stroke: yellowish + 1pt)
+  arc((-a, 0), start: 180deg, stop: 360deg, radius: (a, b), fill: none, stroke: color + 1pt)
 }
