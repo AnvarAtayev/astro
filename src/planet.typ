@@ -8,7 +8,7 @@
   if f != none { f() } else { generic_surface(color: color) }
 }
 
-#let add_label(position, radius, name) = {
+#let add-label(position, radius, name) = {
   if name != "" {
     content(
       (position.at(0), position.at(1) - radius - 0.3),
@@ -20,7 +20,7 @@
 
 // ── Phase stubs ───────────────────────────────────────────────────────────────
 
-#let add_surface_phase(phase) = {
+#let add-surface-phase(phase) = {
   let shadow = black.transparentize(40%)
   let r2 = calc.sqrt(2)
 
@@ -65,7 +65,7 @@
   // "full": no shadow
 }
 
-#let add_ring_phase(phase) = {
+#let add-ring-phase(phase) = {
   let shadow = black.transparentize(40%)
   // semi-axes of the outer and inner ring ellipses — must match rings.typ
   let ro = (2.3, 0.23)
@@ -126,7 +126,7 @@
   phase: "full",
   rings: false, // full Saturn-style ring system
   ring: none, // single thin ring at given semi-major axis
-  ring_color: luma(22%), // color for thin ring (Uranus/Neptune style)
+  ring-color: luma(22%), // color for thin ring (Uranus/Neptune style)
   color: blue,
   name: "",
 ) = {
@@ -138,13 +138,13 @@
     if rings {
       group({
         rotate(tilt * 1deg)
-        add_rings_back()
+        add-rings-back()
       })
     }
     if ring != none {
       group({
         rotate(tilt * 1deg)
-        add_thin_ring_back(ring, color: ring_color)
+        add-thin-ring-back(ring, color: ring-color)
       })
     }
 
@@ -153,23 +153,23 @@
       rotate(tilt * 1deg)
       add_surface(surface, color: color)
     })
-    add_surface_phase(phase)
+    add-surface-phase(phase)
 
     // Front halves of rings (drawn last, appear in front of the planet)
     if rings {
       group({
         rotate(tilt * 1deg)
-        add_rings_front()
-        add_ring_phase(phase)
+        add-rings-front()
+        add-ring-phase(phase)
       })
     }
     if ring != none {
       group({
         rotate(tilt * 1deg)
-        add_thin_ring_front(ring, color: ring_color)
+        add-thin-ring-front(ring, color: ring-color)
       })
     }
   })
-  add_label(center, radius, name)
+  add-label(center, radius, name)
 }
 

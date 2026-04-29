@@ -1,5 +1,5 @@
 #import "planet.typ": *
-#import "surfaces.typ": uranus_ring, neptune_ring
+#import "surfaces.typ": uranus-ring, neptune-ring
 
 // default radii
 #let dr = (
@@ -39,7 +39,7 @@
 #let mars(..args) = planet(surface: "mars", radius: dr.at("mars"), name: dn.at("mars"), ..args)
 #let jupiter(..args) = planet(surface: "jupiter", radius: dr.at("jupiter"), name: dn.at("jupiter"), ..args)
 #let saturn(..args) = planet(surface: "saturn", radius: dr.at("saturn"), rings: true, name: dn.at("saturn"), ..args)
-#let uranus(..args) = planet(surface: "uranus", radius: dr.at("uranus"), ring: 1.5, ring_color: uranus_ring, name: dn.at("uranus"), ..args)
-#let neptune(..args) = planet(surface: "neptune", radius: dr.at("neptune"), ring: 1.5, ring_color: neptune_ring, name: dn.at("neptune"), ..args)
+#let uranus(..args) = planet(surface: "uranus", radius: dr.at("uranus"), ring: 1.5, ring-color: uranus-ring, name: dn.at("uranus"), ..args)
+#let neptune(..args) = planet(surface: "neptune", radius: dr.at("neptune"), ring: 1.5, ring-color: neptune-ring, name: dn.at("neptune"), ..args)
 #let pluto(..args) = planet(surface: "pluto", radius: dr.at("pluto"), name: dn.at("pluto"), ..args)
 

@@ -74,7 +74,7 @@ You have many celestial bodies to choose from. The current implementation includ
 })
 ```
 
-![Planets](examples/planets.svg)
+![All planets rendered side by side from Sun to Pluto](examples/planets.svg)
 
 Each body function accepts a `center` parameter to set its position on the canvas and a `name` parameter to control the label rendered beneath it:
 
@@ -154,7 +154,7 @@ You can compose celestial bodies freely on a CeTZ canvas to diagram orbital syst
 })
 ```
 
-![Orbit](examples/orbit.svg)
+![Earth and Moon in orbit with a dashed elliptical path](examples/orbit.svg)
 
 ### Solar System
 

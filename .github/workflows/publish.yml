@@ -36,6 +36,11 @@ jobs:
           git clone https://AnvarAtayev:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/packages.git
           git -C packages remote set-url origin https://AnvarAtayev:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/packages.git
 
+      - name: Fix example imports
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          sed -i "s|#import \"../src/bodies.typ\": \*|#import \"@preview/astro:$VERSION\": *|g" examples/*.typ
+
       - name: Copy package files
         run: |
           DEST=packages/packages/preview/astro/${{ steps.version.outputs.VERSION }}
@@ -49,12 +54,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git checkout -b add-astro-${{ steps.version.outputs.VERSION }}
           git add .
-          git commit -m "Add astro:${{ steps.version.outputs.VERSION }}"
+          git commit -m "astro:${{ steps.version.outputs.VERSION }}"
           git push origin add-astro-${{ steps.version.outputs.VERSION }} --force
           printf '## astro v%s\nA package for drawing celestial bodies (planets, rings, surfaces) in Typst.\n- **Repository:** https://github.com/AnvarAtayev/astro\n- **License:** MIT\n' "${{ steps.version.outputs.VERSION }}" > ../pr-body.md
           gh pr create \
             --repo typst/packages \
-            --title "Add astro:${{ steps.version.outputs.VERSION }}" \
+            --title "astro:${{ steps.version.outputs.VERSION }}" \
             --body-file ../pr-body.md \
             --head "AnvarAtayev:add-astro-${{ steps.version.outputs.VERSION }}" \
           || echo "PR already exists, skipping."

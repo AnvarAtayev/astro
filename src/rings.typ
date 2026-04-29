@@ -8,7 +8,7 @@
 
 #let add_rings_back() = {
   // Upper half — drawn before the planet so it sits behind it.
-  merge-path(close: true, fill: saturn_ring, stroke: none, {
+  merge-path(close: true, fill: saturn-ring, stroke: none, {
     arc((2.3, 0), start: 0deg,   stop: 180deg, radius: (2.3, 0.23)) // outer upper CCW
     line((-2.3, 0), (-1.3, 0))
     arc((-1.3, 0), start: 180deg, stop: 0deg,  radius: (1.3, 0.13)) // inner upper CW (delta = -180°)
@@ -18,7 +18,7 @@
 
 #let add_rings_front() = {
   // Lower half — drawn after the planet so it sits in front of it.
-  merge-path(close: true, fill: saturn_ring, stroke: none, {
+  merge-path(close: true, fill: saturn-ring, stroke: none, {
     arc((-2.3, 0), start: 180deg, stop: 360deg,  radius: (2.3, 0.23)) // outer lower CCW
     line((2.3, 0), (1.3, 0))
     arc((1.3, 0),  start: 0deg,   stop: -180deg, radius: (1.3, 0.13)) // inner lower CW (delta = -180°)
