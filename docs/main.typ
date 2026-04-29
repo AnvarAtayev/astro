@@ -16,7 +16,7 @@ Import `astro` and `cetz`, open a canvas, and call any of the pre-defined body f
 
 ```typst
 #import "@preview/cetz:0.5.0"
-#import "@preview/astro:0.1.1": *
+#import "@preview/astro:0.1.6": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"), margin: 20pt)
 
@@ -31,7 +31,7 @@ All body functions accept the same keyword arguments as `planet` (see below).
 
 = Pre-defined Bodies
 
-The following convenience functions are available after `import "@preview/astro:0.1.1": *`.
+The following convenience functions are available after `import "@preview/astro:0.1.6": *`.
 Each wraps `planet` with a realistic surface texture and a default radius scaled to real relative sizes.
 
 #table(
@@ -54,7 +54,7 @@ The example below draws all bodies side by side at their default radii:
 
 ```typst
 #import "@preview/cetz:0.5.0"
-#import "@preview/astro:0.1.1": *
+#import "@preview/astro:0.1.6": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"))
 
@@ -79,7 +79,7 @@ The example below draws all bodies side by side at their default radii:
 Default radii and display names are also exported as dictionaries for layout arithmetic:
 
 ```typst
-#import "@preview/astro:0.1.1": dr, dn
+#import "@preview/astro:0.1.6": dr, dn
 
 // dr.at("earth") == 1.0   (radius in canvas units)
 // dn.at("earth") == "Earth"
@@ -121,7 +121,7 @@ The example below places the Earth and Moon on a dashed orbit line:
 
 ```typst
 #import "@preview/cetz:0.5.0"
-#import "@preview/astro:0.1.1": *
+#import "@preview/astro:0.1.6": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"), margin: 20pt)
 
@@ -159,7 +159,7 @@ The `phase` parameter accepts the following string values. The same shadow overl
 
 ```typst
 #import "@preview/cetz:0.5.0"
-#import "@preview/astro:0.1.1": *
+#import "@preview/astro:0.1.6": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"), margin: 20pt)
 
@@ -201,7 +201,7 @@ For a more complete scene, the `solar_system` example arranges all bodies on ran
 ```typst
 #import "@preview/cetz:0.5.0"
 #import "@preview/suiji:0.5.1": *
-#import "@preview/astro:0.1.1": *
+#import "@preview/astro:0.1.6": *
 
 #set page(width: auto, height: auto, fill: rgb("#050510"), margin: 20pt)
 
