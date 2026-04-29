@@ -14,6 +14,21 @@ jobs:
         id: version
         run: echo "VERSION=${GITHUB_REF_NAME#v}" >> $GITHUB_OUTPUT
 
+      - name: Update version references
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          sed -i "s/^version = .*/version = \"$VERSION\"/" typst.toml
+          sed -i "s/@preview\/astro:[0-9]*\.[0-9]*\.[0-9]*/@preview\/astro:$VERSION/g" README.md
+          sed -i "s/@preview\/astro:[0-9]*\.[0-9]*\.[0-9]*/@preview\/astro:$VERSION/g" docs/main.typ
+
+      - name: Commit version bumps
+        run: |
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add typst.toml README.md docs/main.typ
+          git commit -m "Bump version to ${{ steps.version.outputs.VERSION }}"
+          git push https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/astro.git main
+
       - name: Clone packages fork
         run: |
           git clone https://x-access-token:${{ secrets.PACKAGES_TOKEN }}@github.com/AnvarAtayev/packages.git
@@ -23,13 +38,13 @@ jobs:
         run: |
           DEST=packages/packages/preview/astro/${{ steps.version.outputs.VERSION }}
           mkdir -p "$DEST"
-          cp -r src README.md LICENSE typst.toml "$DEST/"
+          cp -r src examples README.md LICENSE typst.toml "$DEST/"
 
       - name: Open PR
         run: |
           cd packages
-          git config user.email "anvar936@live.com"
-          git config user.name "AnvarAtayev"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
           git checkout -b add-astro-${{ steps.version.outputs.VERSION }}
           git add .
           git commit -m "Add astro:${{ steps.version.outputs.VERSION }}"
@@ -37,7 +52,10 @@ jobs:
           gh pr create \
             --repo typst/packages \
             --title "Add astro:${{ steps.version.outputs.VERSION }}" \
-            --body "Automated submission of astro v${{ steps.version.outputs.VERSION }}" \
+            --body "## astro v${{ steps.version.outputs.VERSION }}
+          A package for drawing celestial bodies (planets, rings, surfaces) in Typst.
+          - **Repository:** https://github.com/AnvarAtayev/astro
+          - **License:** MIT" \
             --head "AnvarAtayev:add-astro-${{ steps.version.outputs.VERSION }}" \
           || echo "PR already exists, skipping."
         env:
