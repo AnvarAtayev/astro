@@ -1,4 +1,5 @@
 <h1 align="center">
+  <img src="examples/logo.svg" alt="astro logo" width="160" /><br/>
   <strong>astro</strong>
 </h1>
 <p align="center">
@@ -10,13 +11,13 @@ Generate beautiful astronomical diagrams in Typst.
 Import the package at the top of your Typst document:
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 ```
 
 `astro` is built on top of [CeTZ](https://github.com/cetz-package/cetz), so all bodies must be drawn inside a `cetz.canvas` block:
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 #import "@preview/cetz:0.5.0"
 
 #cetz.canvas({
@@ -45,7 +46,7 @@ You have many celestial bodies to choose from. The current implementation includ
 | `pluto()` | Pluto |
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 #import "@preview/cetz:0.5.0"
 #import cetz.draw: *
 
@@ -103,7 +104,7 @@ The following phases are supported:
 | `"last crescent"` | Thin crescent on the left |
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 #import "@preview/cetz:0.5.0"
 #import cetz.draw: *
 
@@ -135,7 +136,7 @@ The following phases are supported:
 You can compose celestial bodies freely on a CeTZ canvas to diagram orbital systems. Bodies accept a `center` parameter for positioning, allowing you to recreate any arrangement:
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 #import "@preview/cetz:0.5.0"
 #import cetz.draw: *
 
@@ -160,7 +161,7 @@ You can compose celestial bodies freely on a CeTZ canvas to diagram orbital syst
 Combine orbits and bodies to build a full solar system diagram:
 
 ```typst
-#import "@preview/astro:0.1.0": *
+#import "@preview/astro:0.1.1": *
 #import "@preview/cetz:0.5.0"
 #import "@preview/suiji:0.5.1": *
 #import cetz.draw: *
