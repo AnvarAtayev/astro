@@ -38,6 +38,7 @@ jobs:
             --repo typst/packages \
             --title "Add astro:${{ steps.version.outputs.VERSION }}" \
             --body "Automated submission of astro v${{ steps.version.outputs.VERSION }}" \
-            --head "AnvarAtayev:add-astro-${{ steps.version.outputs.VERSION }}"
+            --head "AnvarAtayev:add-astro-${{ steps.version.outputs.VERSION }}" \
+          || echo "PR already exists, skipping."
         env:
           GH_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
