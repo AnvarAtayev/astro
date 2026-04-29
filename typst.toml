@@ -6,6 +6,6 @@ license = "MIT"
 entrypoint = "src/bodies.typ"
 authors = ["Anvar Atayev <https://github.com/AnvarAtayev>"]
 description = "Draw celestial bodies in Typst"
-categories = [ "visualization", "graphics", "astronomy" ]
+categories = [ "visualization" ]
 disciplines = [ "education", "astronomy", "drawing" ]
 keywords = ["astronomy", "planet", "solar system", "space", "cosmos"]
