@@ -2,7 +2,7 @@
 
 #show: it => template(it, toml: toml("/typst.toml"))
 
-#align(center, image("../examples/logo.svg", width: 8cm))
+#figure(image("../examples/logo.svg", width: 8cm))
 
 = Introduction
 
