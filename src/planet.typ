@@ -5,7 +5,7 @@
 
 #let add-surface(name, color: blue) = {
   let f = surfaces.at(name, default: none)
-  if f != none { f() } else { generic_surface(color: color) }
+  if f != none { f() } else { generic-surface(color: color) }
 }
 
 #let add-label(position, radius, name) = {
