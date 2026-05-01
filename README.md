@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="examples/logo.svg" alt="astro logo" width="160" /><br/>
+  <img src="images/logo.svg" alt="astro logo" width="160" /><br/>
   <strong>astro</strong>
 </h1>
 <p align="center">
@@ -74,7 +74,7 @@ You have many celestial bodies to choose from. The current implementation includ
 })
 ```
 
-![All planets rendered side by side from Sun to Pluto](examples/planets.svg)
+![All planets rendered side by side from Sun to Pluto](images/planets.svg)
 
 Each body function accepts a `center` parameter to set its position on the canvas and a `name` parameter to control the label rendered beneath it:
 
@@ -129,7 +129,7 @@ The following phases are supported:
 })
 ```
 
-![Moon phases](examples/moon.svg)
+![Moon phases](images/moon.svg)
 
 ### Orbits
 
@@ -154,7 +154,7 @@ You can compose celestial bodies freely on a CeTZ canvas to diagram orbital syst
 })
 ```
 
-![Earth and Moon in orbit with a dashed elliptical path](examples/orbit.svg)
+![Earth and Moon in orbit with a dashed elliptical path](images/orbit.svg)
 
 ### Solar System
 
@@ -199,7 +199,7 @@ Combine orbits and bodies to build a full solar system diagram:
 })
 ```
 
-![Solar system](examples/solar_system.svg)
+![Solar system](images/solar_system.svg)
 
 ## Documentation
 

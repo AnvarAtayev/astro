@@ -2,7 +2,7 @@
 
 #show: it => template(it, toml: toml("/typst.toml"))
 
-#figure(image("../examples/logo.svg", width: 8cm))
+#figure(image("../images/logo.svg", width: 8cm))
 
 = Introduction
 
@@ -74,7 +74,7 @@ The example below draws all bodies side by side at their default radii:
 })
 ```
 
-#image("../examples/planets.svg")
+#image("../images/planets.svg")
 
 Default radii and display names are also exported as dictionaries for layout arithmetic:
 
@@ -140,7 +140,7 @@ The example below places the Earth and Moon on a dashed orbit line:
 })
 ```
 
-#image("../examples/orbit.svg")
+#image("../images/orbit.svg")
 
 = Moon Phases
 
@@ -181,7 +181,7 @@ The `phase` parameter accepts the following string values. The same shadow overl
 })
 ```
 
-#image("../examples/moon.svg")
+#image("../images/moon.svg")
 
 = Custom Bodies
 
@@ -232,4 +232,4 @@ For a more complete scene, the `solar_system` example arranges all bodies on ran
 })
 ```
 
-#image("../examples/solar_system.svg")
+#image("../images/solar_system.svg")
