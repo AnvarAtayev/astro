@@ -9,3 +9,5 @@ description = "Draw celestial bodies in Typst"
 categories = [ "visualization" ]
 disciplines = [ "education", "physics" ]
 keywords = ["astronomy", "planet", "solar system", "space", "cosmos"]
+compiler = "0.14.0"
+exclude = ["images",  "examples", "docs", ".github", ".gitignore"]
