@@ -10,9 +10,11 @@
 
 #let add-label(position, radius, name) = {
   if name != "" {
+    let label-text  = if type(name) == str { name } else { name.at("text") }
+    let label-color = if type(name) == str { white } else { name.at("color", default: white) }
     content(
       (position.at(0), position.at(1) - radius - 0.3),
-      align(center, text(name, fill: white, size: 7pt)),
+      align(center, text(label-text, fill: label-color, size: 7pt)),
       anchor: "north",
     )
   }
