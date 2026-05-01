@@ -37,17 +37,17 @@ Each wraps `planet` with a realistic surface texture and a default radius scaled
 #table(
   columns: (auto, auto, auto),
   [*Function*], [*Default radius*], [*Notes*],
-  [`sun(..args)`],     [`4.0`], [Yellow gradient with sunspot groups],
+  [`sun(..args)`], [`4.0`], [Yellow gradient with sunspot groups],
   [`mercury(..args)`], [`0.35`], [Grey with Caloris Basin and craters],
-  [`venus(..args)`],   [`0.87`], [Cloud-banded golden atmosphere],
-  [`earth(..args)`],   [`1.0`], [Blue ocean, continents, polar ice caps],
-  [`moon(..args)`],    [`0.27`], [Maria, craters; supports all phase values],
-  [`mars(..args)`],    [`0.53`], [Rust surface, Valles Marineris, polar caps],
+  [`venus(..args)`], [`0.87`], [Cloud-banded golden atmosphere],
+  [`earth(..args)`], [`1.0`], [Blue ocean, continents, polar ice caps],
+  [`moon(..args)`], [`0.27`], [Maria, craters; supports all phase values],
+  [`mars(..args)`], [`0.53`], [Rust surface, Valles Marineris, polar caps],
   [`jupiter(..args)`], [`2.5`], [Belt/zone banding, Great Red Spot],
-  [`saturn(..args)`],  [`2.0`], [Full ring system enabled by default],
-  [`uranus(..args)`],  [`1.5`], [Thin ring enabled by default],
+  [`saturn(..args)`], [`2.0`], [Full ring system enabled by default],
+  [`uranus(..args)`], [`1.5`], [Thin ring enabled by default],
   [`neptune(..args)`], [`1.45`], [Thin ring enabled by default, Great Dark Spot],
-  [`pluto(..args)`],   [`0.5`], [Tombaugh Regio heart feature],
+  [`pluto(..args)`], [`0.5`], [Tombaugh Regio heart feature],
 )
 
 The example below draws all bodies side by side at their default radii:
@@ -106,15 +106,19 @@ planet(
 #table(
   columns: (auto, 1fr),
   [*Parameter*], [*Description*],
-  [`center`],  [Canvas coordinate `(x, y)` for the centre of the body.],
-  [`radius`],  [Radius in canvas units. All surface detail and ring geometry scales with this value.],
-  [`surface`], [Key into the built-in surface map (`"sun"`, `"earth"`, `"moon"`, etc.) or `none` to use `generic_surface(color: color)`.],
-  [`tilt`],    [Axial tilt applied to the surface and rings, in degrees.],
-  [`phase`],   [Illumination phase. Applies a shadow overlay. See Moon Phases for valid values.],
-  [`rings`],   [When `true`, draws a full Saturn-style elliptical ring system behind and in front of the body.],
-  [`ring`],    [When set to a number, draws a single thin ring whose semi-major axis equals the value (in the body's local coordinate space after `radius` scaling).],
-  [`color`],   [Fill colour used by `generic_surface` when no named `surface` is given.],
-  [`name`],    [Text label rendered below the body. Pass `""` to suppress the label.],
+  [`center`], [Canvas coordinate `(x, y)` for the centre of the body.],
+  [`radius`], [Radius in canvas units. All surface detail and ring geometry scales with this value.],
+  [`surface`],
+  [Key into the built-in surface map (`"sun"`, `"earth"`, `"moon"`, etc.) or `none` to use `generic_surface(color: color)`.],
+
+  [`tilt`], [Axial tilt applied to the surface and rings, in degrees.],
+  [`phase`], [Illumination phase. Applies a shadow overlay. See Moon Phases for valid values.],
+  [`rings`], [When `true`, draws a full Saturn-style elliptical ring system behind and in front of the body.],
+  [`ring`],
+  [When set to a number, draws a single thin ring whose semi-major axis equals the value (in the body's local coordinate space after `radius` scaling).],
+
+  [`color`], [Fill colour used by `generic_surface` when no named `surface` is given.],
+  [`name`], [Text label rendered below the body. Pass `""` to suppress the label.],
 )
 
 The example below places the Earth and Moon on a dashed orbit line:
@@ -145,16 +149,16 @@ The `phase` parameter accepts the following string values. The same shadow overl
 #table(
   columns: (auto, 1fr),
   [*Value*], [*Description*],
-  [`"full"`],           [No shadow — fully illuminated.],
-  [`"new"`],            [Fully shadowed.],
+  [`"full"`], [No shadow — fully illuminated.],
+  [`"new"`], [Fully shadowed.],
   [`"first crescent"`], [Thin crescent, right side lit.],
-  [`"last crescent"`],  [Thin crescent, left side lit.],
-  [`"first half"`],     [Right half lit (first quarter).],
-  [`"last half"`],      [Left half lit (third quarter).],
+  [`"last crescent"`], [Thin crescent, left side lit.],
+  [`"first half"`], [Right half lit (first quarter).],
+  [`"last half"`], [Left half lit (third quarter).],
   [`"waxing gibbous"`], [More than half lit, right side.],
   [`"waning gibbous"`], [More than half lit, left side.],
-  [`"top half"`],       [Top half lit.],
-  [`"bottom half"`],    [Bottom half lit.],
+  [`"top half"`], [Top half lit.],
+  [`"bottom half"`], [Bottom half lit.],
 )
 
 ```typst
